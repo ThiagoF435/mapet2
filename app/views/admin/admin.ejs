@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+
+  <title>Administrador</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/js/sbadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/js/sbadmin/css/sb-admin-2.min.css" rel="stylesheet">
+  <style>
+  a{
+  color:black;
+  }
+  </style>
+<link rel="shortcut icon" href="img/favicon-32x32.png">
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color:#292929" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-paw"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Mapet</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="/modulos">
+          <i class="fas fa-fw fa-border-all"></i>
+          <span>Módulos</span></a>
+      </li>
+	        <li class="nav-item">
+        <a class="nav-link" href="/agenda/listar">
+          <i class="fas fa-fw fa-calendar"></i>
+          <span>Agenda</span></a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/historico/listar">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Históricos</span></a>
+    </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/perfil">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Perfil</span></a>
+      </li>
+          </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+        
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800 pt-3">Mapet</h1>
+          </div>
+
+          <div class="row">
+              <!-- Earnings (Monthly) Card Example -->
+              <div class="col-xl-4 col-md-6 mb-4">
+                  <div class="card border-left-warning shadow h-100 py-2">
+                        <a href="/usuarios/listar">
+                          <div class="card-body">
+                              <div class="row no-gutters align-items-center">
+                                  <div class="col">
+                                      <div class="text-s font-weight-bold text-black text-uppercase">Funcionários</div>
+                                  </div>
+                                  <div class="col-auto">
+                                      <i class="fas fa-user-tie fa-3x" style="color:#F6C23E"></i>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+              <div class="col-xl-4 col-md-6 mb-4">
+                  <div class="card border-left-warning shadow h-100 py-2">
+                    <a href="/clientes/listar">
+                          <div class="card-body">
+                              <div class="row no-gutters align-items-center">
+                                  <div class="col">
+                                      <div class="text-s font-weight-bold text-black text-uppercase">Clientes</div>
+                                  </div>
+                                  <div class="col-auto">
+                                      <i class="fas fa-users fa-3x" style="color:#F6C23E"></i>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+
+              <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+              <a href="/animais/listar"> 
+              <div class="card-body">
+              <div class="row no-gutters align-items-center"> 
+              <div class="col"> 
+              <div class="text-s font-weight-bold text-black text-uppercase">Pets</div>                       
+              </div> 
+              <div class="col-auto"> 
+              <i class="fas fa-cat fa-3x"style="color:#F6C23E"></i>
+              </div> 
+              </div> 
+              </div>
+              </a>
+              </div>
+              </div>
+
+              <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2"> 
+              <a href="/especies/listar"> 
+              <div class="card-body">
+               <div class="row no-gutters align-items-center"> 
+               <div class="col"> 
+               <div class="text-s font-weight-bold text-black text-uppercase">Espécies</div> 
+               </div> 
+               <div class="col-auto"> 
+              <i class="fas fa-paw fa-3x"style="color:#F6C23E"></i> 
+              </div> 
+              </div> 
+              </div> 
+              </a>
+               </div> 
+             </div> 	
+              <div class="col-xl-4 col-md-6 mb-4"> 
+              <div class="card border-left-warning shadow h-100 py-2"> 
+              <a href="/racas/listar"> 
+              <div class="card-body"> 
+              <div class="row no-gutters align-items-center">
+              <div class="col"> 
+              <div class="text-s font-weight-bold text-black text-uppercase">Raças</div> 
+              </div> 
+              <div class="col-auto"> 
+              <i class="fas fa-paw fa-3x"style="color:#F6C23E"></i> 
+              </div> 
+              </div> 
+              </div> 
+              </a>
+              </div> 
+              </div>		
+              <!-- <div class="col-xl-4 col-md-6 mb-4"> -->
+              <!-- <div class="card border-left-warning shadow h-100 py-2"> -->
+              <!-- <a href="#"> -->
+              <!-- <div class="card-body"> -->
+              <!-- <div class="row no-gutters align-items-center"> -->
+              <!-- <div class="col mr-2"> -->
+              <!-- <div class="text-s font-weight-bold text-black text-uppercase mb-1">Consulta</div> -->
+              <!-- </div> -->
+              <!-- <div class="col-auto"> -->
+              <!-- <i class="fas fa-comments fa-3x"style="color:#F6C23E"></i> -->
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- </a> -->
+              <!-- </div> -->
+              <!-- </div> -->
+          </div>
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/js/sbadmin/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/js/sbadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sbadmin/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
