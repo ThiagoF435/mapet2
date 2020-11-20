@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>Login</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/js/sbadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="/css/admin4b.css" rel="stylesheet">
+
+</head>
+
+<body >
+<style>
+    .page-sign {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .page-sign.sign-in {
+        background-image: linear-gradient(166deg, rgba(111, 104, 160, 0.28) 50%, rgba(17, 18, 29, 0.52) 70%), url(../../../../../images/slider8.jpg);
+    }
+</style>
+    <div class="page-sign sign-in">
+        <div class="container-sign">
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/logomapet100.png">
+                    <h1>Recuperar senha</h1>
+                </div>
+                <div class="card-body">
+<% if(erro != '') { %>
+                                    <alert><%=erro%></alert>
+                                    <% } %>
+                                    <form action="/login/recuperar_senha_enviar" name="form" method="POST" role="form">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-12 pr-2">
+                                                <div class="form-group">
+                                                    <label>
+                                                        Digite seu email
+                                                    </label>
+                                                    <input type="email" name="email" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn mt-1" style="background-color:#FFB800; color: white">Enviar</button>
+                                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/js/sbadmin/vendor/jquery/jquery.min.js"></script>
+    <script src="/js/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/js/sbadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+</body>
+
+</html>

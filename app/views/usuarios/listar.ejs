@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>Administrador</title>
+
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/js/sbadmin/css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        a {
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color:#292929" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Mapet</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="/modulos">
+                    <i class="fas fa-fw fa-border-all"></i>
+                    <span>Módulos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/agenda/listar">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>Agenda</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/historico/listar">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Históricos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/perfil">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid" style="padding-right: 0px; padding-left: 0px;margin-bottom: 1%;">
+
+                    <!-- Page Heading -->
+                    <nav class="navbar navbar-light bg-white" style="padding-bottom: 0px;padding-top: 0px;height: 80px; margin-bottom: 1%;">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800 pt-3">Funcionários</h1>
+                        </div>
+                        <a href="/usuarios/cadastrar"><button id="btn-incluir-header" class="btn btn-primary btn-md " style=" float:right;margin-right: 2%;">Incluir</button></a>
+                    </nav>
+                    <section class="page-content">
+                        <div id="div-table-content" class="card show">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <form action="/usuarios/pesquisar" name="pesquisar" method="POST" role="form">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-md-6 pr-2">
+                                                    <div class="form-group">
+                                                        <label>
+                                                            Pesquisar
+                                                        </label>
+                                                        <input type="text" name="obj" class="form-control">
+
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary mt-3"><i class="fas fa-paw"></i></button>
+                                            </div>
+                                        </form>
+                                        <table id="tbl-itens" class="table table-hover" cellspacing="0" width='100%'>
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th width="30%">Nome</th>
+                                                    <th width="20%">Email</th>
+                                                    <th width="15%">Cargo</th>
+                                                    <th width="15%">Telefone</th>
+                                                    <th width="6%">Ação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% for(var i = 0; i < dados.length; i++) { %>
+                                                <tr>
+                                                    <td><%= dados[i].nome %></td>
+                                                    <td><%= dados[i].email %></td>
+                                                    <td><%= dados[i].cargo %></td>
+                                                    <td><%= dados[i].telefone %></td>
+                                                    <td><a class="edit" href="editar?id=<%=dados[i].id_user%>"><i class="fas fa-pencil-alt"></i></a>&nbsp;<a class="edit" href="deletar?id=<%=dados[i].id_user%>"><i class="fas fa-trash-alt"></i></a>&nbsp;<a class="edit" href="visualizar?id=<%=dados[i].id_user%>"><i class="fas fa-eye"></i></a></td>
+                                                </tr>
+                                                <% } %>
+                                            </tbody>
+                                        </table>
+                                        <div class="pagination">
+                                            <% if (page.pageCount > 1) { %>
+
+                                            <% if (page.currentPage > 1) { %>
+                                            <a href="listar?page=1">&laquo;</a>
+                                            <% } %>
+                                            <% var i = 1;
+                                            if (page.currentPage > 3) {
+                                            i = +page.currentPage - 2;
+                                            } %>
+                                            <% if (i !== 1) { %>
+                                            <a href="#">...</a>
+                                            <% } %>
+                                            <% for (i; i<=page.pageCount; i++) { %>
+                                            <% if (page.currentPage == i) { %>
+                                            <span class="atual"><%= i %></span>
+                                            <% } else { %>
+                                            <a href="listar?page=<%= i %>"><%= i %></a>
+                                            <% } %>
+                                            <% if (i == (+page.currentPage + 2)) { %>
+                                            <a href="#">...</a>
+                                            <% break; } %>
+                                            <% } %>
+                                            <% if (page.currentPage != page.pageCount) { %>
+                                            <a href="listar?page=<%= page.pageCount %>">&raquo;</a>
+                                            <% } %>
+
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/js/sbadmin/vendor/jquery/jquery.min.js"></script>
+    <script src="/js/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/js/sbadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sbadmin/js/sb-admin-2.min.js"></script>
+
+    <!--DataTable-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.3.0/css/fixedColumns.dataTables.min.css" />
+
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.min.js"></script>
+</body>
+
+</html>
