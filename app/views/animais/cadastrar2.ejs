@@ -111,7 +111,11 @@
                                                 <div class="form-group d-flex">
                                                     <h6 style="font-weight: bold; padding-right:10px">Data de Nascimento:</h6>
                                                     <label>
-                                                        <%= dados.data_nasc %>
+                                                        <% var dia = dados.data_nasc.substring(8,10) %>
+                                                        <% var mes = dados.data_nasc.substring(5,7) %>
+                                                        <% var ano = dados.data_nasc.substring(0,4) %>
+                                                        <% var dataFinal = dia + "/" + mes + "/" + ano %>
+                                                        <%= dataFinal %>
                                                     </label>
                                                 </div>
                                             </div>

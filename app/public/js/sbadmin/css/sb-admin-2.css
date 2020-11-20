@@ -4738,12 +4738,14 @@ input[type="button"].btn-block {
   color: #858796;
 }
 
+/*
 .pagination {
   display: flex;
   padding-left: 0;
   list-style: none;
   border-radius: 0.35rem;
 }
+*/
 
 .page-link {
   position: relative;
