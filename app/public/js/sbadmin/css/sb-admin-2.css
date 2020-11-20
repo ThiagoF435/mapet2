@@ -11221,22 +11221,3 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
-
-.pagination {
-  display: inline-block;
-  margin-top: 80px;
-  margin-left: 20px;
-}
-  
-.pagination a {
-  color: black;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-.atual {
-  background-color: #f6c23e;
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-}

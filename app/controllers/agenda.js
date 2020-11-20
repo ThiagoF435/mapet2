@@ -229,52 +229,6 @@ module.exports.pesquisar = function(app, req, res) {
     })
 }
 
-module.exports.pesquisarHoje = function(app, req, res) {
-    if(req.session.loggedin != true) {
-        return res.redirect('/')
-    }
-
-    var conn = app.config.databaseConnection()
-    var model = new app.app.models.AgendaDAO(conn)
-
-    var today = new Date()
-
-    var dd = String(today.getDate()).padStart(2, '0')
-    var mm = String(today.getMonth() + 1).padStart(2, '0')
-    var yyyy = today.getFullYear()
-
-    var obj = yyyy + '-' + mm + '-' + dd
-
-    model.pesquisar(obj, function(err, result) {
-        if(err) throw err
-
-        res.render('agenda/listar', {dados : result})
-    })
-}
-
-module.exports.pesquisarMes = function(app, req, res) {
-    if(req.session.loggedin != true) {
-        return res.redirect('/')
-    }
-
-    var conn = app.config.databaseConnection()
-    var model = new app.app.models.AgendaDAO(conn)
-
-    var today = new Date()
-
-    var dd = String(today.getDate()).padStart(2, '0')
-    var mm = String(today.getMonth() + 1).padStart(2, '0')
-    var yyyy = today.getFullYear()
-
-    var obj = yyyy + '-' + mm + '-'
-
-    model.pesquisar(obj, function(err, result) {
-        if(err) throw err
-
-        res.render('agenda/listar', {dados : result})
-    })
-}
-
 module.exports.compareceuSim = function(app, req, res) {
     if(req.session.loggedin != true) {
         return res.redirect('/')

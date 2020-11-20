@@ -28,15 +28,10 @@
             <div class="col-2">
                 <img src="/img/logomapet100.png" />
             </div>  
-            <div class="col-5">
-                <p class="text-right pt-3">
+            <div class="col-10">
+                <p class="text-right">
                     <span>Mapet - Clínica Veterinária</span><br />
                     <span><%=data%></span><br />
-                </p>
-            </div>
-			<div class="col-5 ">
-                <p class="text-right pt-3">
-					<button id="btn-imprimir" class="btn btn-primary btn-md" style=" float:right;margin-right: 2%;" onClick="window.print()"><i class="fas fa-print"></i></button>
                 </p>
             </div>
         </div>
@@ -54,13 +49,7 @@
                 <tbody>
                     <% for(var i = 0; i < dados.length; i++) { %>
                     <tr>
-                        <% var dia = dados[0].data.substring(8,10) %>
-                        <% var mes = dados[0].data.substring(5,7) %>
-                        <% var ano = dados[0].data.substring(0,4) %>
-                        <% var hora = dados[0].data.substring(11,13) %>
-                        <% var minutos = dados[0].data.substring(14,16) %>
-                        <% var dataFinal = dia + "/" + mes + "/" + ano + " - " + hora + ":" + minutos %>
-                        <td align="center"><%= dataFinal %></td>
+                        <td align="center"><%= dados[i].data.toLocaleString('en-US') %></td>
                         <td align="center"><%= dados[i].nome_veterinario %></td>
                         <td align="center"><%= dados[i].nome_dono %></td>
                         <td><%= dados[i].nome_animal %></td>

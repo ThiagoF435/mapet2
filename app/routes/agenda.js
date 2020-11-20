@@ -43,14 +43,6 @@ module.exports = function(app) {
         app.app.controllers.agenda.pesquisar(app, req, res)
     })
 
-    app.post('/agenda/pesquisar_hoje', function(req, res) {
-        app.app.controllers.agenda.pesquisarHoje(app, req, res)
-    })
-
-    app.post('/agenda/pesquisar_mes', function(req, res) {
-        app.app.controllers.agenda.pesquisarMes(app, req, res)
-    })
-
     app.get('/agenda/compareceu_sim', function(req, res) {
         app.app.controllers.agenda.compareceuSim(app, req, res)
     })

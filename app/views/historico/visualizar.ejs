@@ -90,15 +90,9 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-md-12 pr-2">
                                                 <div class="form-group">
-                                                    <label style="font-weight: bold;">Data:</label>
+                                                    <label style="font-weight: bold;">Data (mm/dd/yyyy):</label>
                                                     <label>
-                                                    <% var dia = dados[0].data.substring(8,10) %>
-                                                    <% var mes = dados[0].data.substring(5,7) %>
-                                                    <% var ano = dados[0].data.substring(0,4) %>
-                                                    <% var hora = dados[0].data.substring(11,13) %>
-                                                    <% var minutos = dados[0].data.substring(14,16) %>
-                                                    <% var dataFinal = dia + "/" + mes + "/" + ano + " - " + hora + ":" + minutos %>
-                                                    <%= dataFinal %>
+                                                    <%= dadosAgenda[0].data.toLocaleString('en-US') %>
                                                     </label>                                                 
                                                 </div>
                                             </div>
