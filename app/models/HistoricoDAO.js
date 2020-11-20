@@ -23,7 +23,11 @@ HistoricODAO.prototype.pesquisarId = function(id, callback) {
 }
 
 HistoricODAO.prototype.gerarRelatorio = function(id, data_inicio, data_final, callback) {
+<<<<<<< HEAD
     this._connection.query('select h.*, ag.id_agenda, ag.data, c.nome as nome_dono, c.id_dono, an.nome as nome_animal, an.id_animal, u.nome as nome_veterinario, u.id_user from historico h, agenda ag, cliente c, animal an, usuario u where u.id_user = '+id+' and (ag.data between "'+data_inicio+'" and "'+data_final+'") and h.id_user = u.id_user and h.id_animal = an.id_animal and h.id_agenda = ag.id_agenda and c.id_dono = an.id_dono order by ag.data asc', callback)
+=======
+    this._connection.query('select h.*, ag.id_agenda, ag.data, c.nome as nome_dono, c.id_dono, an.nome as nome_animal, an.id_animal, u.nome as nome_veterinario, u.id_user from historico h, agenda ag, cliente c, animal an, usuario u where u.id_user = '+id+' and (ag.data between "'+data_inicio+'" and "'+data_final+'") and h.id_user = u.id_user and h.id_animal = an.id_animal and h.id_agenda = ag.id_agenda and c.id_dono = an.id_dono', callback)
+>>>>>>> main
 }
 
 module.exports = function() {

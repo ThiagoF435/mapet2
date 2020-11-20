@@ -102,6 +102,7 @@
                                                 <button type="submit" class="btn btn-primary mt-3"><i class="fas fa-paw"></i></button>
                                             </div>
                                         </form>
+<<<<<<< HEAD
 
                                         <div class="row no-gutters align-items-center">
                                         <div class="col-md-6 pr-2">
@@ -122,6 +123,12 @@
                                             <thead class="thead-dark">
                                                 <tr>
                                                     <th width="20%">Data</th>
+=======
+                                        <table id="tbl-itens" class="table table-hover" cellspacing="0" width='100%'>
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th width="20%">Data (mm/dd/yyyy)</th>
+>>>>>>> main
                                                     <th width="20%">Pet</th>
                                                     <th width="20%">Veterinário(a)</th>
                                                     <th width="6%">Compareceu</th>
@@ -132,6 +139,7 @@
                                             <tbody>
                                                 <% for(var i = 0; i < dados.length; i++) { %>
                                                 <tr>
+<<<<<<< HEAD
                                                     <% var dia = dados[i].data.substring(8,10) %>
                                                     <% var mes = dados[i].data.substring(5,7) %>
                                                     <% var ano = dados[i].data.substring(0,4) %>
@@ -139,6 +147,9 @@
                                                     <% var minutos = dados[i].data.substring(14,16) %>
                                                     <% var dataFinal = dia + "/" + mes + "/" + ano + " - " + hora + ":" + minutos %>
                                                     <td><%= dataFinal %>&nbsp;<a class="edit" href="editarData?id=<%=dados[i].id_agenda%>"><i class="fas fa-calendar-alt"></i></a></td>
+=======
+                                                    <td><%= dados[i].data.toLocaleString('en-US') %>&nbsp;<a class="edit" href="editarData?id=<%=dados[i].id_agenda%>"><i class="fas fa-calendar-alt"></i></a></td>
+>>>>>>> main
                                                     <td><a href="/animais/visualizar?id=<%=dados[i].id_animal%>" target="_blank"><i><%= dados[i].nome %></i></a></td>
                                                     <td><a href="/usuarios/visualizar?id=<%=dados[i].id_user%>" target="_blank"><i><%= dados[i].nome_usuario %></td>
                                                     <td><%= dados[i].compareceu %></td>

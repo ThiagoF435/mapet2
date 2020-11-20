@@ -103,7 +103,11 @@
                             <table id="tbl-itens" class="table table-hover" cellspacing="0" width='100%'>
                                 <thead class="thead-dark">
                                     <tr>
+<<<<<<< HEAD
                                       <th>Data</th>
+=======
+                                      <th>Data (mm/dd/yyyy)</th>
+>>>>>>> main
                                       <th>Dono</th>
                                       <th>Pet</th>
                                       <th>Veterinário(a)</th>
@@ -113,6 +117,7 @@
 								<tbody>
                                   <% for(var i = 0; i < dados.length; i++) { %>
                                     <tr>
+<<<<<<< HEAD
                                         <% var dia = dados[i].data.substring(8,10) %>
                                         <% var mes = dados[i].data.substring(5,7) %>
                                         <% var ano = dados[i].data.substring(0,4) %>
@@ -120,6 +125,9 @@
                                         <% var minutos = dados[i].data.substring(14,16) %>
                                         <% var dataFinal = dia + "/" + mes + "/" + ano + " - " + hora + ":" + minutos %>
                                         <td><%= dataFinal %></td>
+=======
+                                        <td><%= dados[i].data.toLocaleString('en-US') %></td>
+>>>>>>> main
                                         <td><a href="/clientes/visualizar?id=<%=dados[i].id_dono%>" target="_blank"><i><%= dados[i].nome_dono %></i></a></td>
                                         <td><a href="/animais/visualizar?id=<%=dados[i].id_animal%>" target="_blank"><i><%= dados[i].nome %></i></a></td>
                                         <td><a href="/usuarios/visualizar?id=<%=dados[i].id_user%>" target="_blank"><i><%= dados[i].nome_usuario %></td>

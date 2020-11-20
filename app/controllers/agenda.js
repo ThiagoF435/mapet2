@@ -229,6 +229,7 @@ module.exports.pesquisar = function(app, req, res) {
     })
 }
 
+<<<<<<< HEAD
 module.exports.pesquisarHoje = function(app, req, res) {
     if(req.session.loggedin != true) {
         return res.redirect('/')
@@ -275,6 +276,8 @@ module.exports.pesquisarMes = function(app, req, res) {
     })
 }
 
+=======
+>>>>>>> main
 module.exports.compareceuSim = function(app, req, res) {
     if(req.session.loggedin != true) {
         return res.redirect('/')
